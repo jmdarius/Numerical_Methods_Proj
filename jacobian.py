@@ -3,7 +3,7 @@ import numpy as np
 import jax
 import jax.numpy as jnp
 from jax import jit, vmap, grad
-
+import timeit 
 ## Define System of Equations
 # INPUT: Array of independent variables x = [x0,x1,...,xn]
 # OUTPUT: Array of dependent Results res = [f0, f1, ..., fn]
@@ -40,6 +40,5 @@ def multivariateNewton(f, x0, tol, N):
         x0 = x                  # Update x0 for Next iteration
     print("Failed to converge") # Print Message if Convergence did not occur
 
-res = multivariateNewton # Perform Newton Method for System "fs" with guess  [x0,x1,x2] = [1,1,1] with tol = 1e-8 and 20 maximum iterations
+res = multivariateNewton(fs, [1.,1.,1.], 1e-8, 20) # Perform Newton Method for System "fs" with guess  [x0,x1,x2] = [1,1,1] with tol = 1e-8 and 20 maximum iterations
 print(fs(res))  # Print fs output for system
-mvn = jit(multivariateNewton)
