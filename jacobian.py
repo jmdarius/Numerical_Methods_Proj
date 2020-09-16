@@ -2,6 +2,7 @@
 import numpy as np
 import jax
 import jax.numpy as jnp
+from jax import jit, vmap, grad
 
 ## Define System of Equations
 # INPUT: Array of independent variables x = [x0,x1,...,xn]
@@ -33,11 +34,12 @@ def multivariateNewton(f, x0, tol, N):
         x = jnp.subtract(x0, jnp.matmul(J_inv(x0), f(x0).T)) # Perform Newton Iteration: x_{n+1} = x_n-J^(-1)*f
         reltol = jnp.divide(jnp.linalg.norm(jnp.subtract(x,x0)),jnp.linalg.norm(x)) # Calculate: ||x_{n+1}-x_n||/||x_{n+1}||
         print(i, reltol)        # Print iteration and relTol
-        if reltol < tol:        # Check for convergance
+        if reltol < tol:        # Check for convergence
             print(x)            # Print Result
             return x            # Return Result 
         x0 = x                  # Update x0 for Next iteration
-    print("Failed to converge") # Print Message if Convergance did not occur
+    print("Failed to converge") # Print Message if Convergence did not occur
 
-res = multivariateNewton(fs, [1.,1.,1.], 1e-8, 20) # Perform Newton Method for System "fs" with guess  [x0,x1,x2] = [1,1,1] with tol = 1e-8 and 20 maximum iterations
+res = multivariateNewton # Perform Newton Method for System "fs" with guess  [x0,x1,x2] = [1,1,1] with tol = 1e-8 and 20 maximum iterations
 print(fs(res))  # Print fs output for system
+mvn = jit(multivariateNewton)
