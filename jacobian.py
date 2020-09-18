@@ -46,16 +46,16 @@ res = multivariateNewton(fs, [1.,1.,1.], 1e-8, 20) # Perform Newton Method for S
 print(fs(res))  # Print fs output for system
 
 
-Notes from meeting
--> Work on one or the other first
--> 
--> 
--> Working on developing the presentation first
--> Numerical Studies to be presented
-----> Presentation --
-    --> Requires Newton Raphson iteration
-    --> Physics Based and preoblem specification of the problem to be solved
-    --> Only solving viscoplastic
-    --> Tree diagram for viscoplastic deformation from the other deformation methods
-    --> Joby-> Doing yield surface plots
-    --> 
+# Notes from meeting
+# -> Work on one or the other first
+# -> 
+# -> 
+# -> Working on developing the presentation first
+# -> Numerical Studies to be presented
+# ----> Presentation --
+#     --> Requires Newton Raphson iteration
+#     --> Physics Based and preoblem specification of the problem to be solved
+#     --> Only solving viscoplastic
+#     --> Tree diagram for viscoplastic deformation from the other deformation methods
+#     --> Joby-> Doing yield surface plots
+#     --> 
