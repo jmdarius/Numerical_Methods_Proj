@@ -45,17 +45,4 @@ def multivariateNewton(f, x0, tol, N):
 res = multivariateNewton(fs, [1.,1.,1.], 1e-8, 20) # Perform Newton Method for System "fs" with guess  [x0,x1,x2] = [1,1,1] with tol = 1e-8 and 20 maximum iterations
 print(fs(res))  # Print fs output for system
 
-
-# Notes from meeting
-# -> Work on one or the other first
-# -> 
-# -> 
-# -> Working on developing the presentation first
-# -> Numerical Studies to be presented
-# ----> Presentation --
-#     --> Requires Newton Raphson iteration
-#     --> Physics Based and preoblem specification of the problem to be solved
-#     --> Only solving viscoplastic
-#     --> Tree diagram for viscoplastic deformation from the other deformation methods
-#     --> Joby-> Doing yield surface plots
-#     --> 
+kappa\
