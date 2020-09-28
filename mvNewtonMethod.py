@@ -8,16 +8,25 @@ import timeit
 # INPUT: Array of independent variables x = [x0,x1,...,xn]
 # OUTPUT: Array of dependent Results res = [f0, f1, ..., fn]
 
-def fs(x):
-    # From http://fourier.eng.hmc.edu/e176/lectures/NM/node21.html Example 1
-    # f0 = 3*x_0 - cos(x_1*x_2)--1.5
-    # f1 = 4*x_0^2-625*x_1^2+2*x-1
-    # f2 = 20*x_2+exp(-x_0*x_1)+9
-    f0 = 3*x[0]-jnp.cos(x[1]*x[2])-3/2  # Equation 1
-    f1 = 4*x[0]**2-625*x[1]**2+2*x[2]-1 # Equation 2
-    f2 = 20*x[2]+jnp.exp(-x[0]*x[1])+9  # Equation 3
-    res = [f0, f1, f2]                  # Create Array of Results
-    return jnp.asarray(res)             # Return Jax Array
+# def fs(x):
+#     # From http://fourier.eng.hmc.edu/e176/lectures/NM/node21.html Example 1
+#     # f0 = 3*x_0 - cos(x_1*x_2)--1.5
+#     # f1 = 4*x_0^2-625*x_1^2+2*x-1
+#     # f2 = 20*x_2+exp(-x_0*x_1)+9
+#     f0 = 3*x[0]-jnp.cos(x[1]*x[2])-3/2  # Equation 1
+#     f1 = 4*x[0]**2-625*x[1]**2+2*x[2]-1 # Equation 2
+#     f2 = 20*x[2]+jnp.exp(-x[0]*x[1])+9  # Equation 3
+#     res = [f0, f1, f2]                  # Create Array of Results
+#     return jnp.asarray(res)             # Return Jax Array
+
+def radialReturn():
+    
+    return
+
+
+def functions():
+    return
+    
 
 ## Define Multivariate Newton Method
 # INPUT: System of Functions = f, Initial Guess Array = x0, tolerance = tol, Maximum iterations = N
